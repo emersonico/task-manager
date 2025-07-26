@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.proyecto_final_ada_gui.SistemaController">
+
+    <center>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="15" right="15" bottom="15" left="15"/>
+            </padding>
+            <Label text="Agregar Tarea" style="-fx-font-weight: bold"/>
+            <HBox spacing="10">
+                <TextField fx:id="idField" promptText="ID"/>
+                <TextField fx:id="descripcionField" promptText="Descripción"/>
+                <TextField fx:id="prioridadField" promptText="Prioridad"/>
+                <Button text="Agregar" onAction="#onAgregarTarea"/>
+            </HBox>
+
+            <Label text="Buscar Tarea (por ID)" style="-fx-font-weight: bold"/>
+            <HBox spacing="10">
+                <TextField fx:id="buscarIdField" promptText="ID"/>
+                <Button text="Buscar" onAction="#onBuscarTarea"/>
+            </HBox>
+
+            <Button text="Procesar siguiente tarea" onAction="#onProcesarTarea" maxWidth="200"/>
+
+            <Label text="Resultado de Búsqueda" style="-fx-font-weight: bold"/>
+            <TextArea fx:id="outputArea" prefRowCount="6" wrapText="true"/>
+
+            <Label text="Tareas Pendientes" style="-fx-font-weight: bold; -fx-text-fill: darkblue;"/>
+            <TextArea fx:id="pendingTasksArea" prefRowCount="8" wrapText="true" style="-fx-control-inner-background: #f0f8ff; -fx-font-family: Consolas;"/>
+        </VBox>
+    </center>
+</BorderPane>
